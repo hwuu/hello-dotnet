@@ -19,7 +19,7 @@ namespace ApiServer
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddSingleton<IEchoService, EchoServiceImpl1>();
+            services.AddSingleton<IEchoService, EchoService1>();
             // services.AddSingleton<IEchoService, EchoServiceImpl2>();
         }
 

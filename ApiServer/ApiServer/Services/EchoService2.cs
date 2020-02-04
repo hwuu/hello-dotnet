@@ -1,6 +1,6 @@
 ﻿namespace ApiServer
 {
-    public class EchoServiceImpl2 : IEchoService
+    public class EchoService2 : IEchoService
     {
         public string Echo(string s)
         {
