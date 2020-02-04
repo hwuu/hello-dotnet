@@ -19,8 +19,7 @@ namespace ApiServer
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddSingleton<IEchoService, EchoService1>();
-            // services.AddSingleton<IEchoService, EchoServiceImpl2>();
+            services.AddSingleton<IEchoService, EchoService2>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -30,15 +29,13 @@ namespace ApiServer
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            app.UseRouting();
-
-            app.UseAuthorization();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+            app
+                .UseRouting()
+                .UseAuthorization()
+                .UseEndpoints(endpoints =>
+                {
+                    endpoints.MapControllers();
+                });
         }
     }
 }
